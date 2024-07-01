@@ -31,14 +31,16 @@ public class login {
 Thread.sleep(3000);
 		driver.findElement(By.xpath("(//input[@value='Add New Category'])[1]")).click();
 		JavascriptExecutor j2s = (JavascriptExecutor) driver;
-		//j2s.executeScript("window.scrollBy(0,1700);");
-		driver.findElement(By.xpath("(//div[contains(text(),'Sortd')])[2]")).click();
+		j2s.executeScript("window.scrollBy(0,1700);");
+		driver.findElement(By.cssSelector("a[class='wp-has-submenu wp-not-current-submenu menu-top toplevel_page_sortd-settings menu-top-last'] div[class='wp-menu-name']")).click();
 		JavascriptExecutor j3s = (JavascriptExecutor) driver;
 		j3s.executeScript("window.scrollBy(0,1700);");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[@href='admin.php?page=sortd-manage-settings']")).click();
-		driver.findElement(By.xpath("//div[@class='container-pj']//div[1]//span[1]//a[1]//i[1]")).click();
-		driver.findElement(By.xpath("(//span[@class='slider-tog round'])[3]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@id='wpbody-content']/div[5]/div[2]/div[1]/div[2]/div[2]/div[1]/span[1]/a[1]/i[1]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//tbody/tr[@id='tr-19716']/td[2]")).click();
 		
 		((JavascriptExecutor) driver).executeScript("window.open();");
 	        Set<String> windowHandles = driver.getWindowHandles();
